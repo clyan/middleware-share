@@ -1,0 +1,10 @@
+{
+  "name": "tomato-custom-ui",
+  "version": "1.0.2",
+  "description": "自定义组件库",
+  "main": "index.js",
+  "module": "index.js",
+  "keywords": [],
+  "author": "wenyaoyan",
+  "license": "ISC"
+}
