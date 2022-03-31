@@ -29,11 +29,42 @@ function initUse (Vue) {
 }
 ```
 ```js
+let MyPlugin = {};
 
+MyPlugin.install = function (Vue, options) {
+  console.log(Vue, this, options);
+  // 1. 添加全局方法或 property
+  Vue.myGlobalMethod = function () {
+    // 逻辑...
+  };
+
+  // 2. 添加全局资源
+  Vue.directive("my-directive", {
+    bind(el, binding, vnode, oldVnode) {
+      // 逻辑...
+    },
+  });
+
+  // 3. 注入组件选项
+  Vue.mixin({
+    created: function () {
+      console.log("哈哈哈哈");
+    },
+  });
+
+  // 4. 添加实例方法
+  Vue.prototype.$myMethod = function (methodOptions) {
+    // 逻辑...
+  };
+};
+
+export default MyPlugin;
 ```
+
 这也是vue组件库的基础，组件库都是这么干的。
 
 ## Rollup插件
+
 https://cegmktg0el.feishu.cn/wiki/wikcnA0sHycXeUkevS1ZPkfn9Ld#BfEWMD
 
 
@@ -68,5 +99,5 @@ class CustomWebpackPlugin {
 }
 module.exports = CustomWebpackPlugin;
 ```
-
+# webpack运行流程、源码解析，Tabable原理
 https://juejin.cn/post/6844903976563900430

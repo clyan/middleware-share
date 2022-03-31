@@ -65,6 +65,6 @@ hooks.tapPromise("ccc", function (name) {
   });
 });
 
-hooks.callAsync("yangjie").then((res) => {
+hooks.callAsync("wj").then((res) => {
   console.log("res:end", res);
 });
